@@ -1,0 +1,23 @@
+.button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.primary {
+  background: #3563e9;
+  color: #fff;
+}
+.secondary {
+  background: #e5e7eb;
+  color: #1b1f24;
+}
+.danger {
+  background: #c53030;
+  color: #fff;
+}
