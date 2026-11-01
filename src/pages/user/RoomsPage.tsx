@@ -1,24 +1,10 @@
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../features/auth/useAuth";
-import Button from "../../components/Button";
+import RoomsList from "../../features/rooms/components/RoomsList";
 
 export default function RoomsPage() {
-  const { user, logout } = useAuth();
-  const navigate = useNavigate();
-
   return (
-    <main style={{ padding: 24 }}>
-      <h1>Страница юзера</h1>
-      <p>Роль: {user?.role}</p>
-      <Button
-        variant="secondary"
-        onClick={() => {
-          logout();
-          navigate("/login");
-        }}
-      >
-        Выйти
-      </Button>
-    </main>
+    <>
+      <h1>Комнаты</h1>
+      <RoomsList />
+    </>
   );
 }

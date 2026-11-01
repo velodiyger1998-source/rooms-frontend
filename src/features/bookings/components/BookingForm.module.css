@@ -1,0 +1,15 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+}
+.error {
+  margin: 0;
+  color: #c53030;
+  font-size: 14px;
+}

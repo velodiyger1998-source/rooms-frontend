@@ -1,0 +1,17 @@
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  margin-bottom: 24px;
+  padding: 16px;
+  border: 1px solid #dde1e6;
+  border-radius: 12px;
+  background: #fff;
+}
+.error {
+  width: 100%;
+  margin: 0;
+  color: #c53030;
+  font-size: 14px;
+}

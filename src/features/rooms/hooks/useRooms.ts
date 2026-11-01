@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getRooms } from "../../api/roomsApi";
+import { getRooms } from "../../../api/roomsApi";
 
 export const roomKeys = {
   all: ["rooms"] as const,

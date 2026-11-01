@@ -1,12 +1,12 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { createRoom } from "../../api/roomsApi";
+import { deactivateRoom } from "../../../api/roomsApi";
 import { roomKeys } from "./useRooms";
 
-export function useCreateRoom() {
+export function useDeactivateRoom() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: createRoom,
+    mutationFn: deactivateRoom,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: roomKeys.all });
     },

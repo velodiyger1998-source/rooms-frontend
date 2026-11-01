@@ -1,0 +1,22 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid #dde1e6;
+  border-radius: 12px;
+  background: #fff;
+}
+.meta {
+  color: #6b7480;
+  font-size: 14px;
+}
+.error {
+  color: #c53030;
+}

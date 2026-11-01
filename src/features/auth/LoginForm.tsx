@@ -1,7 +1,9 @@
-import { useState, type FormEvent } from "react";
+import { useState, type SyntheticEvent } from "react";
 import { useNavigate } from "react-router-dom";
+import { useMutation } from "@tanstack/react-query";
 import { useAuth } from "./useAuth";
 import { getErrorMessage } from "../../utils/getErrorMessage";
+import { getHomePath } from "../../utils/getHomePath";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import styles from "./LoginForm.module.css";
@@ -12,21 +14,15 @@ export default function LoginForm() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: FormEvent) => {
+  const { mutate, isPending, error } = useMutation({
+    mutationFn: login,
+    onSuccess: (user) => navigate(getHomePath(user.role), { replace: true }),
+  });
+
+  const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-    setError("");
-    setLoading(true);
-    try {
-      const user = await login({ email, password });
-      navigate(user.role === "ADMIN" ? "/admin" : "/rooms", { replace: true });
-    } catch (err) {
-      setError(getErrorMessage(err));
-    } finally {
-      setLoading(false);
-    }
+    mutate({ email, password });
   };
 
   return (
@@ -46,8 +42,8 @@ export default function LoginForm() {
         onChange={(e) => setPassword(e.target.value)}
         required
       />
-      {error && <p className={styles.error}>{error}</p>}
-      <Button type="submit" loading={loading}>
+      {error && <p className={styles.error}>{getErrorMessage(error)}</p>}
+      <Button type="submit" loading={isPending}>
         Войти
       </Button>
     </form>

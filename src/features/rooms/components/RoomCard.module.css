@@ -1,0 +1,14 @@
+.card {
+  padding: 16px;
+  border: 1px solid #dde1e6;
+  border-radius: 12px;
+  background: #fff;
+}
+.title {
+  margin: 0 0 4px;
+}
+.meta {
+  margin: 0 0 8px;
+  color: #6b7480;
+  font-size: 14px;
+}

@@ -1,13 +1,20 @@
-export type BookingStatus = 'pending' | 'approved';
+export type BookingStatus = "PENDING" | "CONFIRMED" | "CANCELLED" | "COMPLETED";
 
 export interface Booking {
   id: number;
-  roomId: number;
   userId: number;
-  date: string;
-  timeFrom: string;
-  timeTo: string;
+  roomId: number;
+  startAt: string;
+  endAt: string;
   status: BookingStatus;
+  createdAt: string;
+  updatedAt: string;
+  user?: { id: number; email: string };
+  room?: { id: number; name: string };
 }
 
-export type BookingPayload = Pick<Booking, 'roomId' | 'date' | 'timeFrom' | 'timeTo'>;
+export interface BookingPayload {
+  roomId: number;
+  startAt: string;
+  endAt: string;
+}
