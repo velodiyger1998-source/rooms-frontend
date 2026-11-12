@@ -14,3 +14,10 @@
   color: #c53030;
   font-size: 14px;
 }
+
+.hint {
+  margin: 0;
+  font-size: 14px;
+  color: #6b7480;
+  text-align: center;
+}

@@ -20,3 +20,8 @@
 .error {
   color: #c53030;
 }
+
+.actions {
+  display: flex;
+  gap: 8px;
+}

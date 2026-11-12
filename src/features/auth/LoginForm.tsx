@@ -1,5 +1,5 @@
 import { useState, type SyntheticEvent } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { useAuth } from "./useAuth";
 import { getErrorMessage } from "../../utils/getErrorMessage";
@@ -46,6 +46,9 @@ export default function LoginForm() {
       <Button type="submit" loading={isPending}>
         Войти
       </Button>
+      <p className={styles.hint}>
+        Нет аккаунта? <Link to="/register">Зарегистрироваться</Link>
+      </p>
     </form>
   );
 }

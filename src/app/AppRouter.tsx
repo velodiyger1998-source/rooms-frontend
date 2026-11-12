@@ -8,12 +8,14 @@ import AdminRoomsPage from "../pages/admin/AdminRoomsPage";
 import UserLayout from "../layouts/UserLayout/UserLayout";
 import MyBookingsPage from "../pages/user/MyBookingsPage";
 import AdminBookingsPage from "../pages/admin/AdminBookingsPage";
+import RegisterPage from "../pages/auth/RegisterPage";
 
 export default function AppRouter() {
   return (
     <Routes>
       <Route element={<GuestGuard />}>
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
       </Route>
 
       <Route element={<RoleGuard role="USER" />}>

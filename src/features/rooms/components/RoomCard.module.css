@@ -1,4 +1,6 @@
 .card {
+  display: flex;
+  flex-direction: column;
   padding: 16px;
   border: 1px solid #dde1e6;
   border-radius: 12px;
@@ -11,4 +13,11 @@
   margin: 0 0 8px;
   color: #6b7480;
   font-size: 14px;
+}
+.description {
+  margin: 0 0 8px;
+}
+.footer {
+  margin-top: auto;
+  padding-top: 8px;
 }

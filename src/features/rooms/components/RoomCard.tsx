@@ -11,13 +11,17 @@ export default function RoomCard({ room }: { room: Room }) {
     <div className={styles.card}>
       <h3 className={styles.title}>{room.name}</h3>
       <p className={styles.meta}>Вместимость: {room.capacity}</p>
-      {room.description && <p>{room.description}</p>}
-
-      {open ? (
-        <BookingForm roomId={room.id} onCancel={() => setOpen(false)} />
-      ) : (
-        <Button onClick={() => setOpen(true)}>Забронировать</Button>
+      {room.description && (
+        <p className={styles.description}>{room.description}</p>
       )}
+
+      <div className={styles.footer}>
+        {open ? (
+          <BookingForm roomId={room.id} onCancel={() => setOpen(false)} />
+        ) : (
+          <Button onClick={() => setOpen(true)}>Забронировать</Button>
+        )}
+      </div>
     </div>
   );
 }
